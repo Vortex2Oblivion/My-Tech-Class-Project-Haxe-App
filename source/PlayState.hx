@@ -16,13 +16,18 @@ class PlayState extends FlxState
 	{
 		super.create();
 
+		// I looked up image on google and this was the first result.
+		// Makes a sprite at X: 100, Y: 0
 		sprite = new FlxSprite(100, 0);
 		sprite.loadGraphic(AssetPaths.Image__png);
 
+		// Makes a sprite at X: 100, Y: 0
 		grid = new FlxSprite(100, 0);
 		grid.makeGraphic(300, 300, flixel.util.FlxColor.WHITE);
+		// Pixel Perfect Rendering so the grid doesn't look wonky.
 		grid.pixelPerfectRender = true;
 
+		// Set the grid pixels.
 		for (y in 0...Std.int(grid.width))
 		{
 			for (x in 0...Std.int(grid.height))
@@ -34,6 +39,7 @@ class PlayState extends FlxState
 			}
 		}
 
+		// Creates text saying "Hello World" in the middle of the screen in red text.
 		text = new FlxText(0, 0, FlxG.width, "Hello World", 64);
 		text.setFormat(null, 64, FlxColor.RED, FlxTextAlign.CENTER);
 
@@ -42,14 +48,17 @@ class PlayState extends FlxState
 		add(grid);
 	}
 
-	override public function update(elapsed:Float):Void
+	override public function update(elapsed:Float):Void // Moves the text along the y axis to the bottom of the screen.
 	{
 		super.update(elapsed);
 
+		// Moves the text 1 pixel down.
 		text.y++;
+		// Moves the sprite and grid 1 pixel down.
 		sprite.x++;
 		grid.x++;
 
+		// Brings things back to screen if they are offscreen.
 		if (text.y > FlxG.height)
 			text.y = 0 - 64;
 
@@ -59,6 +68,4 @@ class PlayState extends FlxState
 		if (grid.x > FlxG.height)
 			grid.x = 0 - 64;
 	}
-
-	function myCallback():Void {}
 }
