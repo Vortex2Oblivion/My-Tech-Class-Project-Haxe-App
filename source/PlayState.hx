@@ -16,6 +16,7 @@ class PlayState extends FlxState
 
 	override public function create()
 	{
+		// I looked up image on google and this was the first result.
 		sprite = new FlxSprite();
 		sprite.makeGraphic(300, 300, flixel.util.FlxColor.WHITE);
 		sprite.loadGraphic(AssetPaths.Image__png);
