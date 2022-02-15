@@ -113,7 +113,6 @@ jobs:
 
       - name: Install HaxeFlixel
         run: |
-          haxelib install hxcpp > /dev/null
           haxelib install lime
           haxelib install openfl
           haxelib install flixel
@@ -152,7 +151,6 @@ jobs:
 
       - name: Install HaxeFlixel
         run: |
-          haxelib install hxcpp > /dev/null
           haxelib install lime
           haxelib install openfl
           haxelib install flixel
