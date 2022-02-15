@@ -16,12 +16,15 @@ class PlayState extends FlxState
 
 	override public function create()
 	{
+		sprite = new FlxSprite();
+		sprite.makeGraphic(300, 300, flixel.util.FlxColor.WHITE);
+		sprite.loadGraphic(AssetPaths.Image__png);
+		sprite.x = 100;
+		sprite.y = 0;
 		super.create();
 		text = new FlxText(0, 0, FlxG.width, "Hello World", 64);
 		text.setFormat(null, 64, FlxColor.RED, FlxTextAlign.CENTER);
 		add(text);
-		sprite = new FlxSprite();
-		sprite.makeGraphic(300, 300, flixel.util.FlxColor.WHITE);
 	}
 
 	override public function update(elapsed:Float):Void
