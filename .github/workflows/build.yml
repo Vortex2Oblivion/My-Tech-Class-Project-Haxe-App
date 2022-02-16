@@ -52,7 +52,7 @@ jobs:
         uses: actions/upload-artifact@v2.2.4
         with:
           name: linux
-          path: export/release/linux/bin
+          path: export/linux/bin
 
   web:
     # The type of runner that the job will run on
@@ -91,7 +91,7 @@ jobs:
         uses: actions/upload-artifact@v2.2.4
         with:
           name: html
-          path: export/release/html5/bin
+          path: export/html5/bin
 
   windows:
     # The type of runner that the job will run on
@@ -129,7 +129,7 @@ jobs:
         uses: actions/upload-artifact@v2.2.4
         with:
           name: windows
-          path: export/release/windows/bin
+          path: export/windows/bin
 
   mac:
     # The type of runner that the job will run on
@@ -168,5 +168,5 @@ jobs:
         uses: actions/upload-artifact@v2.2.4
         with:
           name: mac
-          path: export/release/macos/bin
+          path: export/macos/bin
 
